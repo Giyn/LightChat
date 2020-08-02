@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <body>
+        <img src="static/LightChat.jpg" align="right" width="150" height="150">
+        <h1>Sign In Now</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                {% import 'bootstrap/wtf.html' as wtf%}
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        <div class="raw">
+            <div class="col-md-6">
+                <hr>
+                Password forget?
+                <a href="{{ url_for('send_password_reset_request') }}">
+                    Click here to reset your password.
+                </a>
+            </div>
+        </div>
+    </body>
+{% endblock %}
